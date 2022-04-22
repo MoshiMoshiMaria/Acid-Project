@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+
+//In future, this information will be taken from a txt file and used in the constructor - so look forward to writing that code
 
 public class Card
 {
+    public int i_id;//!< ID of the card
     public string s_name;//!< Name of the Card
     public int i_action;//!< Action of the card - int code will define action, extra parameters supplied elsewhere
     public List<int> l_extraInfo;//!< Extra info needed by the action in order to work - length will depend on the action
@@ -20,8 +23,9 @@ public class Card
      * \brief Constructor for the Card class
      * Constructor takes the name, action code and the extra information
      */
-    public Card(string name, int action, List<int> extraInfo)
+    public Card(int id, string name, int action, List<int> extraInfo)
     {
+        i_id = id;
         s_name = name;
         i_action = action;
         //l_extraInfo = new List<int>(extraInfo.Count); //Doing this an easier way now
